@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const logger = require('./middleware/logger');
-const { DB_URL = 'mongodb://127.0.0.1:27017/test'} = process.env;
+const { DB_URL = 'mongodb://127.0.0.1:27017/recipes' } = process.env;
 
 logger.info('DB_URL', DB_URL);
 
-main().catch((err) => console.log(err));
+main().catch((err) => logger.error(err));
 
 async function main() {
   try {
